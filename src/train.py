@@ -80,16 +80,31 @@ def train_model(data_path: str, model_save_path: str, log_dir: str = 'logs'):
         # Create environment
         env = PricingEnvironment(data, stats)
         
-        # Initialize model and callback
-        model = PricingModel(env, log_dir=log_dir)
-        callback = TensorboardCallback()
+        try:
+            # Try to import tensorboard
+            import tensorboard
+            use_tensorboard = True
+            callback = TensorboardCallback()
+        except ImportError:
+            logger.warning("TensorBoard not available. Training will proceed without logging.")
+            use_tensorboard = False
+            callback = None
+        
+        # Initialize model with conditional tensorboard logging
+        model = PricingModel(
+            env,
+            log_dir=log_dir if use_tensorboard else None
+        )
         
         # Train the model with fewer timesteps initially
         logger.info(f"Training model on {data_path}...")
         initial_timesteps = 50000  # Reduced number of steps for smaller dataset
         
         try:
-            model.train(total_timesteps=initial_timesteps, callback=callback)
+            model.train(
+                total_timesteps=initial_timesteps,
+                callback=callback if use_tensorboard else None
+            )
             logger.info("Initial training completed successfully")
             
             # Save the trained model
