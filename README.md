@@ -1,7 +1,8 @@
 # Price Optimization with Reinforcement Learning
 
 [![CI/CD](https://github.com/yourusername/price-optimization-rl/actions/workflows/ci.yml/badge.svg)](https://github.com/yourusername/price-optimization-rl/actions/workflows/ci.yml)
-[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)]([https://rl-price-prediction.streamlit.app](https://rl-price-prediction.streamlit.app/))
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://rl-price-prediction.streamlit.app)
+
 
 An intelligent price optimization system using reinforcement learning to maximize sales and revenue while maintaining optimal conversion rates.
 
