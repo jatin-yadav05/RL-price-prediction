@@ -18,7 +18,7 @@ An intelligent price optimization system using reinforcement learning to maximiz
 
 1. **Clone the repository**
 ```bash
-git clone [<your-repo-url>](https://github.com/jatin-yadav05/RL-price-prediction)
+git clone https://github.com/jatin-yadav05/RL-price-prediction
 cd price-optimization-rl
 ```
 
