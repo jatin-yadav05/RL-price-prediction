@@ -1,0 +1,95 @@
+# Pricing RL Project Instructions
+
+This document provides detailed instructions for setting up, training, and evaluating the reinforcement learning (RL) model for pricing optimization. The project aims to predict the ideal price of products (soapnuts and wool balls) to maximize sales and conversion rates.
+
+## Project Structure
+pricing_rl_project/
+│
+├── data/
+│   ├── soapnutshistory.csv
+│   ├── woolballhistory.csv
+│
+├── src/
+│   ├── init.py
+│   ├── data_preprocessing.py
+│   ├── environment.py
+│   ├── model.py
+│   ├── train.py
+│   ├── evaluate.py
+│   ├── utils.py
+│
+├── notebooks/
+│   ├── data_exploration.ipynb
+│   ├── model_training.ipynb
+│
+├── models/
+│   ├── pricing_model_soapnuts.zip
+│   ├── pricing_model_woolballs.zip
+│
+├── logs/
+│   ├── training_log_soapnuts.log
+│   ├── training_log_woolballs.log
+│
+├── requirements.txt
+├── README.md
+├── instructions.txt
+
+
+## Setup
+
+### Step 1: Clone the Repository
+
+Clone the repository to your local machine:
+```sh
+git clone <repository_url>
+cd pricing_rl_project
+Step 2: Install Dependencies
+Install the required Python packages:
+
+
+pip install -r requirements.txt
+Data Preprocessing
+Step 3: Load and Preprocess Data
+The data_preprocessing.py script contains functions to load and preprocess the data. Ensure that the data files (soapnutshistory.csv and woolballhistory.csv) are placed in the data/ directory.
+
+Step 4: Explore the Data
+Use the data_exploration.ipynb notebook in the notebooks/ directory to explore and visualize the data. This will help you understand the data distribution and any necessary preprocessing steps.
+
+Define the RL Environment
+Step 5: Create the RL Environment
+The environment.py script defines the RL environment for the pricing problem. This environment simulates the process of setting a price and observing the resulting sales and conversion rates.
+
+Train the RL Model
+Step 6: Train the Model
+Use the train.py script to train the RL model. This script loads the data, preprocesses it, creates the RL environment, and trains the model using the PPO algorithm.
+
+Command to Train the Model for Soapnuts
+
+python src/train.py --data_path data/soapnutshistory.csv --model_save_path models/pricing_model_soapnuts.zip
+Command to Train the Model for Wool Balls
+
+python src/train.py --data_path data/woolballhistory.csv --model_save_path models/pricing_model_woolballs.zip
+Step 7: Monitor Training
+The training logs will be saved in the logs/ directory. You can monitor the training process by checking the log files (training_log_soapnuts.log and training_log_woolballs.log).
+
+Evaluate the RL Model
+Step 8: Evaluate the Model
+Use the evaluate.py script to evaluate the trained RL model. This script loads the data, preprocesses it, creates the RL environment, and evaluates the model's performance.
+
+Command to Evaluate the Model for Soapnuts
+
+python src/evaluate.py --data_path data/soapnutshistory.csv --model_path models/pricing_model_soapnuts.zip
+Command to Evaluate the Model for Wool Balls
+
+python src/evaluate.py --data_path data/woolballhistory.csv --model_path models/pricing_model_woolballs.zip
+Additional Notes
+Step 9: Continuous Learning
+Continuously update your model with new data to adapt to changing market conditions. You can retrain the model periodically using the train.py script.
+
+Step 10: Documentation
+Ensure that the README.md file is up-to-date with the latest project details and instructions. This file should provide an overview of the project, setup instructions, and how to run the scripts.
+
+Verify Streamlit Installation
+```sh
+pip list | findstr streamlit
+```
