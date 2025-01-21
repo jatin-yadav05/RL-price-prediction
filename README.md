@@ -1,6 +1,5 @@
 # Price Optimization with Reinforcement Learning
 
-[![CI/CD](https://github.com/yourusername/price-optimization-rl/actions/workflows/ci.yml/badge.svg)](https://github.com/yourusername/price-optimization-rl/actions/workflows/ci.yml)
 [![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://rl-price-prediction.streamlit.app)
 
 
